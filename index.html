@@ -1,546 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#120805">
-<title>Blaze Bhai VIP | Telegram Channel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAAN SURESHOT | Official Community</title>
 
 <style>
-html{scroll-behavior:smooth;background:#120805}
-body{margin:0}
-#blaze,#blaze *{box-sizing:border-box}
-#blaze{
-  --gold:#ffd34c;
-  --orange:#ff581b;
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  width:100%;
-  min-height:100svh;
-  background:#120805;
-  color:#fff;
-  font-family:'Poppins',sans-serif;
-  text-align:center;
-}
-#blaze a{
-  -webkit-tap-highlight-color:transparent;
-  text-decoration:none;
-}
-#blaze .ambient{
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 50% 0%,#662b0880,transparent 45%),
-    radial-gradient(ellipse at 0% 55%,#77500838,transparent 42%),
-    radial-gradient(ellipse at 100% 85%,#9a28132b,transparent 40%);
-}
-#blaze .orb{
-  position:absolute;
-  width:370px;
-  height:370px;
-  border-radius:50%;
-  filter:blur(85px);
-  opacity:.18;
-  background:#ff8b00;
-  animation:drift 14s ease-in-out infinite alternate;
-}
-#blaze .orb.one{top:100px;left:-180px}
-#blaze .orb.two{
-  bottom:100px;
-  right:-180px;
-  background:#ff4018;
-  animation-delay:-7s;
-}
-#blaze .shell{
-  position:relative;
-  width:min(100%,620px);
-  margin:auto;
-  padding:40px 24px 26px;
-}
-#blaze .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  border:1px solid #eaa92d66;
-  background:#eaa92d0c;
-  border-radius:100px;
-  padding:8px 15px;
-  color:var(--gold);
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:2px;
-}
-#blaze .dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--gold);
-  box-shadow:0 0 12px #ffc940;
-  animation:blink 2s ease-in-out infinite;
-}
-#blaze .logo-wrap{
-  position:relative;
-  width:156px;
-  height:156px;
-  margin:28px auto 24px;
-  border-radius:50%;
-  padding:5px;
-  background:#201008;
-  box-shadow:0 0 55px #ffaf0026;
-  animation:float 5s ease-in-out infinite;
-}
-#blaze .logo-wrap:before{
-  content:"";
-  position:absolute;
-  inset:-3px;
-  border-radius:50%;
-  border:1px solid #efb63455;
-  border-top:3px solid #ffd34c;
-  border-bottom:3px solid #ff581b;
-  animation:spin 9s linear infinite;
-}
-#blaze .logo-wrap img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:50%;
-  background:#160b06;
-}
-#blaze .logo-fallback{
-  display:none;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:linear-gradient(135deg,#ffd34c,#ff581b);
-  color:#1c0b04;
-  font-size:44px;
-  font-weight:800;
-}
-#blaze h1{
-  margin:0;
-  font-size:clamp(30px,7.8vw,46px);
-  font-weight:800;
-  line-height:1.2;
-  letter-spacing:-1.5px;
-  background:linear-gradient(100deg,#fff1a5 0%,#ffcb39 45%,#ff6b20 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-#blaze .tagline{
-  margin:12px 0 18px;
-  font-size:12px;
-  letter-spacing:4px;
-  font-weight:500;
-  color:#e6b749;
-  text-transform:uppercase;
-}
-#blaze .intro{
-  max-width:470px;
-  margin:0 auto;
-  color:#c0b2a7;
-  font-size:14px;
-  line-height:1.9;
-}
-#blaze .cta{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:11px;
-  width:min(100%,395px);
-  min-height:60px;
-  margin:30px auto 0;
-  padding:16px 18px;
-  overflow:hidden;
-  border:1px solid #ffd668;
-  border-radius:100px;
-  background:linear-gradient(105deg,#ffda51,#ff9b24 48%,#ff4e15);
-  box-shadow:0 8px 35px #ff940033,0 0 22px #ffce3026;
-  color:#200e05;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.2px;
-  transition:transform .25s,box-shadow .25s;
-}
-#blaze .cta:before{
-  content:"";
-  position:absolute;
-  top:-50%;
-  left:-70%;
-  width:35%;
-  height:200%;
-  background:linear-gradient(90deg,transparent,#ffffff65,transparent);
-  transform:rotate(25deg);
-  animation:shine 5s ease-in-out infinite;
-}
-#blaze .cta svg{
-  width:22px;
-  height:22px;
-  flex-shrink:0;
-  fill:currentColor;
-}
-#blaze .cta:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 45px #ff940055;
-}
-#blaze .cta:active{transform:scale(.98)}
-#blaze a:focus-visible,
-#blaze summary:focus-visible{
-  outline:3px solid #fff0aa;
-  outline-offset:5px;
-}
-#blaze .note{
-  margin:12px 0 0;
-  color:#a58e77;
-  font-size:10px;
-}
-#blaze .highlights{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:10px;
-  margin:30px 0;
-}
-#blaze .highlight{
-  padding:16px 6px;
-  border:1px solid #b9852e40;
-  border-radius:15px;
-  background:linear-gradient(145deg,#ffffff05,#ffffff01);
-}
-#blaze .highlight strong{
-  display:block;
-  font-size:19px;
-  color:var(--gold);
-  font-weight:700;
-}
-#blaze .highlight span{
-  display:block;
-  margin-top:4px;
-  font-size:9px;
-  color:#b9a794;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-#blaze .cards{
-  display:grid;
-  gap:12px;
-  text-align:left;
-}
-#blaze .card{
-  position:relative;
-  display:flex;
-  align-items:flex-start;
-  gap:15px;
-  padding:20px;
-  border:1px solid #b9852e40;
-  border-radius:16px;
-  background:linear-gradient(125deg,#33201580,#1d110b80);
-  transition:transform .3s,border-color .3s,box-shadow .3s;
-}
-#blaze .card:hover{
-  transform:translateY(-4px);
-  border-color:#ffcb3977;
-  box-shadow:0 12px 25px #0003;
-}
-#blaze .icon{
-  display:grid;
-  place-items:center;
-  width:38px;
-  height:38px;
-  flex-shrink:0;
-  border-radius:11px;
-  background:#f5ba2212;
-  border:1px solid #f5ba2226;
-  color:var(--gold);
-  font-size:19px;
-}
-#blaze .card h2{
-  margin:0 0 7px;
-  font-size:13px;
-  line-height:1.4;
-  letter-spacing:.5px;
-  color:var(--gold);
-  text-transform:uppercase;
-}
-#blaze .card p{
-  margin:0;
-  font-size:12px;
-  color:#bbada0;
-  line-height:1.8;
-}
-#blaze .faq{
-  margin-top:28px;
-  text-align:left;
-}
-#blaze .faq details{
-  border-bottom:1px solid #b9852e30;
-  padding:14px 0;
-}
-#blaze .faq summary{
-  cursor:pointer;
-  color:#e2d4c3;
-  font-size:12px;
-  font-weight:500;
-  line-height:1.6;
-}
-#blaze .faq p{
-  margin:10px 0 0;
-  color:#ac9b8b;
-  font-size:12px;
-  line-height:1.8;
-}
-#blaze .bottom{margin-top:30px}
-#blaze .bottom h2{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
-}
-#blaze .bottom .cta{margin-top:20px}
-#blaze footer{
-  margin-top:30px;
-  padding-top:20px;
-  border-top:1px solid #b9852e25;
-}
-#blaze .disclaimer{
-  margin:0;
-  color:#9d8978;
-  font-size:10px;
-  line-height:1.9;
-}
-#blaze .credit{
-  margin:13px 0 0;
-  color:#967b61;
-  font-size:9px;
-  letter-spacing:1.8px;
-}
-#blaze .credit b{color:#e5b447}
-#blaze .reveal{opacity:1;transform:none}
-#blaze.motion .reveal{
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .7s ease,transform .7s ease;
-}
-#blaze.motion .reveal.visible{
-  opacity:1;
-  transform:none;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes float{50%{transform:translateY(-7px)}}
-@keyframes blink{50%{opacity:.45}}
-@keyframes drift{to{transform:translate(65px,-45px)}}
-@keyframes shine{0%,65%{left:-70%}100%{left:140%}}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-@media(max-width:480px){
-  #blaze .shell{padding:28px 18px 22px}
-  #blaze .logo-wrap{
-    width:136px;
-    height:136px;
-    margin:26px auto 22px;
-  }
-  #blaze h1{letter-spacing:-1px}
-  #blaze .tagline{font-size:10px;letter-spacing:3px}
-  #blaze .intro{font-size:12px}
-  #blaze .cta{
-    min-height:56px;
-    font-size:12px;
-    margin-top:25px;
-    padding:15px 12px;
-  }
-  #blaze .highlights{gap:8px;margin:26px 0}
-  #blaze .highlight{padding:14px 4px}
-  #blaze .highlight strong{font-size:17px}
-  #blaze .highlight span{font-size:8px;letter-spacing:.5px}
-  #blaze .card{padding:17px 14px;gap:12px}
-  #blaze .card p{font-size:11px}
-  #blaze .card h2{font-size:12px}
-  #blaze .bottom h2{font-size:20px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  #blaze *,#blaze *:before{
-    animation:none!important;
-    transition:none!important;
-  }
-  #blaze.motion .reveal{opacity:1;transform:none}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #07090d;
+  color: #fff;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 16px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(190,130,30,.17), transparent 38%),
+    linear-gradient(145deg,#080a0e,#11100b,#050608);
+}
+
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d99a28;
+  filter: blur(140px);
+  opacity: .18;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px solid rgba(222,173,73,.5);
+  border-radius: 25px;
+  background: rgba(15,17,20,.94);
+  box-shadow: 0 0 55px rgba(212,155,45,.12);
+}
+
+.logo {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #d9a43c;
+  background: radial-gradient(circle,#30230e,#11100c 70%);
+  box-shadow: 0 0 30px rgba(218,164,60,.25),
+              inset 0 0 20px rgba(218,164,60,.15);
+}
+
+.logo svg {
+  width: 94px;
+  height: 94px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #b98a35;
+  border-radius: 30px;
+  color: #e9c879;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(31px, 8vw, 43px);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg,#b98124,#fff0b0,#c18a29);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 25px rgba(211,158,57,.12);
+}
+
+.line {
+  width: 90px;
+  height: 3px;
+  margin: 22px auto;
+  border-radius: 5px;
+  background: linear-gradient(90deg,transparent,#e6b74d,transparent);
+}
+
+.description {
+  color: #b7b7b7;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 27px;
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#b77b1d,#f3ce70,#b77b1d);
+  color: #171006;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: .3s;
+  box-shadow: 0 5px 25px rgba(222,169,65,.2);
+}
+
+.cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(222,169,65,.4);
+}
+
+.footer {
+  margin-top: 30px;
+  color: #77736a;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.star {
+  position: absolute;
+  color: #e4b957;
+  animation: blink 2s infinite;
+}
+
+.star.one { top: 15%; left: 12%; }
+.star.two { top: 22%; right: 12%; }
+.star.three { bottom: 15%; left: 15%; }
+.star.four { bottom: 20%; right: 14%; }
+
+@keyframes blink {
+  0%,100% { opacity: .2; transform: scale(.7); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@media(max-width:480px) {
+  .card { padding: 34px 20px; }
+  .logo { width: 115px; height: 115px; }
+  .logo svg { width: 82px; height: 82px; }
 }
 </style>
 </head>
 
 <body>
-<main id="blaze">
-  <div class="ambient" aria-hidden="true">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-  </div>
 
-  <div class="shell">
-    <div class="badge">
-      <span class="dot" aria-hidden="true"></span>
-      OFFICIAL VIP CHANNEL
-    </div>
+<main class="page">
+<div class="glow"></div>
 
-    <div class="logo-wrap">
-      <!-- Replace src with your own uploaded logo URL for independent hosting. -->
-      <img
-        src="https://blazebhaivip.lovable.app/assets/blaze-logo-EYpJ9G54.png"
-        alt="Blaze Bhai VIP logo"
-        width="156"
-        height="156"
-        fetchpriority="high"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <span class="logo-fallback" role="img" aria-label="Blaze Bhai VIP">BB</span>
-    </div>
+<span class="star one">✦</span>
+<span class="star two">✧</span>
+<span class="star three">✦</span>
+<span class="star four">✧</span>
 
-    <h1>BLAZE BHAI VIP</h1>
-    <p class="tagline">Daily Match Insights</p>
+<section class="card">
 
-    <p class="intro">
-      Daily predictions, match insights and community updates —
-      straight to your Telegram. Stay connected with Blaze Bhai VIP.
-    </p>
+<div class="logo">
+<svg viewBox="0 0 100 100" fill="none"
+xmlns="http://www.w3.org/2000/svg">
 
-    <a class="cta"
-       href="https://t.me/+sT0TlJSMM3djYTdl"
-       target="_blank"
-       rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21.8 3.4 18.6 20c-.2 1.2-.9 1.5-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.3c.4-.4-.1-.6-.6-.2L6.1 13.8l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.6c.9-.3 1.7-.2 1.6-.2Z"/>
-      </svg>
-      JOIN TELEGRAM CHANNEL
-    </a>
+<path d="M50 7 L61 20 L79 17 L77 35 L92 48
+L80 62 L83 81 L63 79 L50 94 L37 79
+L17 81 L20 62 L8 48 L23 35 L21 17
+L39 20 Z"
+stroke="#E4B653" stroke-width="3"
+fill="#241a0c"/>
 
-    <p class="note">Open Telegram • View the channel • Join the community</p>
+<path d="M30 38 L50 23 L70 38 L66 65
+L50 79 L34 65 Z"
+stroke="#F6D47E" stroke-width="2"/>
 
-    <div class="highlights reveal">
-      <div class="highlight">
-        <strong>DAILY</strong>
-        <span>Match Insights</span>
-      </div>
-      <div class="highlight">
-        <strong>VIP</strong>
-        <span>Community</span>
-      </div>
-      <div class="highlight">
-        <strong>TG</strong>
-        <span>Direct Updates</span>
-      </div>
-    </div>
+<path d="M36 49 L46 60 L66 39"
+stroke="#F6D47E" stroke-width="5"
+stroke-linecap="round" stroke-linejoin="round"/>
 
-    <section class="cards" aria-label="Channel highlights">
-      <article class="card reveal">
-        <span class="icon" aria-hidden="true">◎</span>
-        <div>
-          <h2>Daily Match Insights</h2>
-          <p>
-            Explore match previews and predictions shared by the channel.
-            Outcomes are never guaranteed.
-          </p>
-        </div>
-      </article>
+<circle cx="50" cy="50" r="44"
+stroke="#B9872F" stroke-width="1"
+stroke-dasharray="3 5"/>
+</svg>
+</div>
 
-      <article class="card reveal">
-        <span class="icon" aria-hidden="true">◷</span>
-        <div>
-          <h2>Live Match Reports</h2>
-          <p>
-            Follow match discussions and updates in one convenient
-            Telegram feed.
-          </p>
-        </div>
-      </article>
+<div class="tag">OFFICIAL COMMUNITY</div>
 
-      <article class="card reveal">
-        <span class="icon" aria-hidden="true">ϟ</span>
-        <div>
-          <h2>Channel Alerts</h2>
-          <p>
-            Enable Telegram notifications to receive new posts
-            when they are published.
-          </p>
-        </div>
-      </article>
+<h1>MAAN<br>SURESHOT</h1>
 
-      <article class="card reveal">
-        <span class="icon" aria-hidden="true">♧</span>
-        <div>
-          <h2>VIP Community</h2>
-          <p>
-            Stay connected with the community and find channel
-            announcements in one place.
-          </p>
-        </div>
-      </article>
-    </section>
+<div class="line"></div>
 
-    <section class="faq reveal" aria-label="Frequently asked questions">
-      <details>
-        <summary>How do I join the channel?</summary>
-        <p>
-          Tap the Telegram button, open the invite in Telegram
-          and select Join if the invite is active.
-        </p>
-      </details>
+<p class="description">
+Welcome to the official MAAN SURESHOT community.
+Stay connected and explore community updates.
+</p>
 
-      <details>
-        <summary>Are predictions guaranteed?</summary>
-        <p>
-          No. Predictions are opinions, and results can vary.
-          They should never be treated as a promise of winnings.
-        </p>
-      </details>
-    </section>
+<a class="cta" href="#">
+JOIN TELEGRAM COMMUNITY →
+</a>
 
-    <section class="bottom reveal">
-      <h2>Stay Ahead. Stay Connected.</h2>
-      <a class="cta"
-         href="https://t.me/+sT0TlJSMM3djYTdl"
-         target="_blank"
-         rel="noopener noreferrer">
-        EXPLORE THE VIP CHANNEL ↗
-      </a>
-    </section>
+<div class="footer">
+MAAN SURESHOT • OFFICIAL
+</div>
 
-    <footer>
-      <p class="disclaimer">
-        18+ only. Predictions are for entertainment and informational purposes.
-        No guaranteed results or winnings. Play responsibly.
-      </p>
-      <p class="credit">ADS BY <b>FLOX ADS</b></p>
-    </footer>
-  </div>
+</section>
 </main>
 
-<script>
-(function(){
-  const root=document.getElementById('blaze');
-
-  if(
-    !root ||
-    !('IntersectionObserver' in window) ||
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  ) return;
-
-  const observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.08});
-
-  root.classList.add('motion');
-
-  root.querySelectorAll('.reveal').forEach(function(element){
-    observer.observe(element);
-  });
-})();
-</script>
 </body>
 </html>
